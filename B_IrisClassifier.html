@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@3.13.0/dist/tf.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs-vis"></script>
+        <title>Faiz DAVIS Test 1 Answers</title>
+        <meta charset="UTF-8">
+        <meta name="description" content="DAVIS 2022 Test 1 Part B">
+        <meta name="author" content="Faiz 'Izunyan' Sufrikhan">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <style>
+            html,
+            body {
+                margin: 0;
+                padding: 0;
+            }
+
+            * {
+                box-sizing: border-box;
+            }
+
+            html {
+                background-color: aqua;
+            }
+
+            body {
+                height: 100vh;
+            }
+
+            /* #answers {
+                        height: 100%;
+                        overflow: scroll;
+                        width: 80vw;
+                    } */
+
+            .answerSpace {
+                background-color: aliceblue;
+                padding: 2rem;
+            }
+
+            pre {
+                white-space: pre-wrap;
+                /* Since CSS 2.1 */
+                white-space: -moz-pre-wrap;
+                /* Mozilla, since 1999 */
+                white-space: -pre-wrap;
+                /* Opera 4-6 */
+                white-space: -o-pre-wrap;
+                /* Opera 7 */
+                word-wrap: break-word;
+                /* Internet Explorer 5.5+ */
+            }
+
+            td {
+                outline: 1px solid black;
+                padding: 0.5rem;
+            }
+        </style>
+    </head>
+
+    <body>
+        <h3>Part B: Iris Classifier (50 marks)</h3>
+
+        <h4>Tasks</h4>
+        <ul>
+            <li>
+                <fieldset>
+                    <legend>Read the provided Iris dataset in CSV format. Split the dataset into train and test dataset
+                        (70,30
+                        randomly splits) [10 marks]</legend>
+                    <div id="task1" class="answerSpace">
+                        Not Loaded
+                    </div>
+                </fieldset>
+            </li>
+            <li>Construct a neural network (I suggest 4:8:3 architecture (input nodes : hidden nodes: output nodes), but
+                you can use your own designs).</li>
+            <li>Discuss the following information of your Iris Classifier (5,10,10,5,10)
+                <ul>
+                    <li>Discuss the network design</li>
+                    <li>Discuss the selection of network parameters for training e.g., optrimizer, loss, etc. </li>
+                    <li>Train the network (using only training data)</li>
+                    <li>Graph the accuracy and loss of the training process (using either chartjs, plotlyjs or tfjs-vis)
+                    </li>
+                    <li>Report the accuracy and confusion matrix of the test result (of test data)</li>
+                </ul>
+            </li>
+        </ul>
+
+    </body>
+
+</html>

@@ -1,0 +1,840 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <script type="text/javascript" async=""
+            src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML">
+            </script>
+        <title>Faiz DAVIS Test 1 Answers</title>
+        <meta charset="UTF-8">
+        <meta name="description" content="DAVIS 2022 Test 1 Part A Theory">
+        <meta name="author" content="Faiz 'Izunyan' Sufrikhan">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            html,
+            body {
+                margin: 0;
+                padding: 0;
+            }
+
+            * {
+                box-sizing: border-box;
+            }
+
+            html {
+                background-color: aqua;
+            }
+
+            body {
+                height: 100vh;
+            }
+
+            /* #answers {
+                height: 100%;
+                overflow: scroll;
+                width: 80vw;
+            } */
+
+            .answerSpace {
+                background-color: aliceblue;
+                padding: 2rem;
+            }
+
+            pre {
+                white-space: pre-wrap;
+                /* Since CSS 2.1 */
+                white-space: -moz-pre-wrap;
+                /* Mozilla, since 1999 */
+                white-space: -pre-wrap;
+                /* Opera 4-6 */
+                white-space: -o-pre-wrap;
+                /* Opera 7 */
+                word-wrap: break-word;
+                /* Internet Explorer 5.5+ */
+            }
+
+            td {
+                outline: 1px solid black;
+                padding: 0.5rem;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div id="answers">
+            <h3>Machine Learning Concepts</h3>
+            <ol>
+                <li>
+                    <fieldset>
+                        <legend>Define linear and non-linear regression. [5 marks]</legend>
+
+                        <div class="answerSpace">
+                            <h4>Linear Regression</h4>
+                            <p>Linear regression is taking labelled data sets that can be represented numerically and
+                                trying
+                                to fit it into a linear equation
+                                <span class="math display">
+                                    \[ y=\sum m_ix_i+c\]
+                                </span>
+                            <pre>
+                                y: the dependant variable which represents the class
+                                x: the independent variables which represents the features.
+                            </pre>
+                            quoting the notes:
+                            <blockquote>
+                                <strong>Linear regression is a linear approach to modelling
+                                    the relationship between a scalar response and one
+                                    or more explanatory variables (also known as
+                                    dependent and independent variables).</strong>
+                            </blockquote>
+                            </p>
+
+                            <hr>
+
+                            <h4>Non-Linear Regression</h4>
+                            <p>
+                                Modelling the dataset to fit a non-linear or curved formula rather than a linear one.
+                            </p>
+                        </div>
+                    </fieldset>
+                </li>
+                <li>
+                    <fieldset>
+                        <legend>List two examples of tasks that are appropriate for regression techniques. In each task,
+                            briefly
+                            describe the input feature
+                            x and the output y. [8 marks]</legend>
+                        <div class="answerSpace">
+                            Regression is a powerful technique with many possible applications. Taking from the notes:
+                            <ul>
+                                <li>
+                                    <fieldset>
+                                        <legend>Real Estate - Predicting House Prices</legend>
+                                        <p>The input features could be:</p>
+                                        <ul>
+                                            <li>Floor Space. Continuous numerical.</li>
+                                            <li>Number of floors. Discrete numerical</li>
+                                            <li>Distance from landmarks such as city centre, schools. Continuous
+                                                numerical.
+                                            </li>
+                                            <li>Number of car parking spaces. Discrete numerical</li>
+                                        </ul>
+                                    </fieldset>
+                                </li>
+                                <li>
+                                    <fieldset>
+                                        <legend>Medical - Predicting Effect of a Treatment</legend>
+                                        <p>The input features could be:</p>
+                                        <ul>
+                                            <li>Blood cell count. Continuous numerical</li>
+                                            <li>Blood pressure. Continuous numerical</li>
+                                            <li>Dosage of medication. Continuos or Discrete depending on unit of
+                                                measurement
+                                            </li>
+                                            <li>Pre-existing conditions. Can be represented as discrete numerical or as
+                                                one
+                                                hot encoding</li>
+                                        </ul>
+                                    </fieldset>
+                                </li>
+                            </ul>
+                        </div>
+                    </fieldset>
+                </li>
+                <li>
+                    <fieldset>
+                        <legend>List two examples of tasks: (i) binary classification task and (ii) multi-class
+                            classification task,
+                            briefly describe the input features and the predicted classes. [8 marks]</legend>
+                        <div class="answerSpace">
+                            <ol>
+                                <li>
+                                    <p>Binary Classification</p>
+                                    <ol>
+                                        <li>
+                                            <p>Diabetic Test</p>
+                                            <p>Input Features</p>
+                                            <ul>
+                                                <li>Blood Pressure. Numerical continuous</li>
+                                                <li>Blood Sugar. Numerical continuous</li>
+                                                <li>Weight. Numerical continuous</li>
+                                                <li>Height. Numerical continuous</li>
+                                            </ul>
+                                            <p>Output Features</p>
+                                            <ul>
+                                                <li>0 - False. No diabetes. Discrete.</li>
+                                                <li>1 - True. Has diabetes. Discrete</li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <p>Gender by voice</p>
+                                            <p>Input Features</p>
+                                            <ul>
+                                                <li>Mean frequency. Numerical continuous</li>
+                                                <li>Median frequency. Numerical continuous</li>
+                                                <li>Q25. Numerical Continuous</li>
+                                                <li>Q75. Numerical continuous</li>
+                                                <li>Interquartile Range (IQR). Numerical continuous</li>
+                                                <li>Skew. Numerical continuous</li>
+                                                <li>Kurt. Numerical continuous</li>
+                                            </ul>
+                                            <p>Output Features</p>
+                                            <ul>
+                                                <li>0 - Male. Discrete</li>
+                                                <li>1 - Female. Discrete</li>
+                                            </ul>
+                                        </li>
+                                    </ol>
+                                </li>
+
+                                <hr>
+
+                                <li>
+                                    <p>Multi-class classification</p>
+                                    <ol>
+                                        <li>
+                                            <p>Iris classification</p>
+                                            <p>Input Features</p>
+                                            <ul>
+                                                <li>Sepal length. Numerical continuous</li>
+                                                <li>Sepal width. Numerical continuous</li>
+                                                <li>Petal length. Numerical continuous</li>
+                                                <li>Sepal width. Numerical continuous</li>
+                                            </ul>
+                                            <p>Output features</p>
+                                            <ul>
+                                                <li>Iris Setosa. Discrete</li>
+                                                <li>Iris Versicolour. Discrete</li>
+                                                <li>Iris Virginica. Discrete</li>
+                                            </ul>
+                                            <i>Note: Could also use one hot encoding</i>
+                                        </li>
+                                        <li>
+                                            <p>Image Recognition</p>
+                                            <p>Input Features</p>
+                                            <ul>
+                                                <li>Pixel data. Array of integer. Could also be broken up into their own
+                                                    individual features such as RGB, HSL, HSV, etc.</li>
+                                            </ul>
+                                            <p>Output features</p>
+                                            <ul>
+                                                <li>Cat. Discrete</li>
+                                                <li>Dog. Discrete</li>
+                                                <li>Bird. Discrete</li>
+                                            </ul>
+                                            <i>Note: Could also use one hot encoding for this.</i>
+                                        </li>
+                                    </ol>
+                                </li>
+                            </ol>
+                        </div>
+                    </fieldset>
+                </li>
+                <li>
+                    <fieldset>
+                        <legend>Describe the k-means and k-nearest neighbors algorithms, you may use plain English or
+                            use
+                            pseudo code as
+                            a medium to convey your explanations. [8 marks]</legend>
+                        <div class="answerSpace">
+                            <h4>k-means</h4>
+                            <p>K-Means is an unsupervised learning technique that clusters data around k number of
+                                centroids. The pseudo code is show below.</p>
+                            <pre>
+                            let k = number of centroids.
+                            //create k number of centroids.
+                            let centroids = new [k]
+                            let oldCentroids = null;
+                            //initialize centroids. Can be done multiple ways such as choosing from center of data, choosing randomly etc. Will choose randomly in this case.
+
+                            forEach(point in centroids){
+                                point = random point.
+                            }
+                            
+                            //repeat this process until centroids do not change.
+                            while(centroids != oldCentroids){
+
+                                //we will now use the centroids as our label. And label every point as the centroid closest to it.
+                                forEach(dataPoint in dataSet){
+                                    closestCentroid = null
+                                    shortestDistance = null
+                                    forEach(point in centroids){
+                                        distance = calculateDistance(point, dataPoint)
+                                        if(shortestDistance > distance || shortestDistance == null){
+                                            shortestDistance == distance
+                                            closestCentroid = point
+                                        }
+                                    }
+
+                                    dataPoint.label = closestCentroid.label
+                                }
+
+                                oldCentroids = centroids
+
+                                //recalculate new centroids for each cluster
+                                centroids = newCentroidsForEachCluster();
+
+                            }
+
+                            return centroids
+
+                        </pre>
+                            <p>To make things faster, the loop can be made to stop when the new centroids are within a
+                                certain variance threshold of the old centroid. Another optimization is to use a smarter
+                                way
+                                to select the initial centroids.</p>
+
+                            <hr>
+
+                            <h4>k-nearest neighbors</h4>
+
+                            <p>K-Nearest Neighbor is a supervised learning classification technique. It is a lazy
+                                learning
+                                algorithm because it memorizes based on the training data. It works as follows:</p>
+
+                            <pre>
+                            //take in new point to classify.
+                            let input = thing to classify.
+
+                            let label = null;
+                            let shortestDistance = null;
+
+                            forEach(point in trainingDataset){
+                                let distance = calculateDistance(input, point)
+                                if (shortestDistance == null){
+                                    shortestDistance = distance
+                                }
+                                if (distance < shortestDistance){
+                                    shortestDistance = distance
+                                    label = point.label
+                                }
+                            }
+
+                            return label
+                        </pre>
+
+                            <hr>
+
+                            <i>
+                                <strong>
+                                    Note: Distance can be calculated multiple ways. There is euclidean, manhattan and
+                                    etc.
+                                    And
+                                    because both techniques use distance, it is highly recommended that the data is
+                                    normalized first.
+                                </strong>
+                            </i>
+                        </div>
+                    </fieldset>
+                </li>
+                <li>
+                    <fieldset>
+                        Given the dataset below, where f is a classification function
+                        <span class="math display">
+                            \[ f(x,y,z) = c \]
+                            \[x : 1,5,2,6,1,-3,2,5,7 \]
+                            \[y : 0,4,1,6,-2,3,-1,6,4 \]
+                            \[z : 1,4,2,6,4,3,2,5,4 \]
+                            \[c : 0,1,0,1,0,0,0,1,1 \]
+                        </span>
+                        <ul>
+                            <li>
+                                <fieldset>
+                                    <legend>Propose a machine learning technique to learn the function from the given
+                                        data
+                                        points (take
+                                        note
+                                        that there could be many plausible techniques). [5 marks]</legend>
+
+                                    <div class="answerSpace">
+                                        <p>The input is numeric, but it is unknown if it is continuous or discrete. From
+                                            the
+                                            sample datapoints in part 2, we can assume that it is discrete. Therefore, a
+                                            few
+                                            simple classifiers that comes to mind are decision tree and logistic
+                                            regression.
+                                            Quickly running through weka shows that both are 100%. As the decision tree
+                                            is
+                                            shallow, I shall be using a decision tree for fast and simple
+                                            implementation.
+                                        </p>
+                                        <p>The logic is:</p>
+                                        <pre>
+                                        If(x<=2) then class = 0
+                                        else class = 1
+                                    </pre>
+                                    </div>
+                                </fieldset>
+                            </li>
+                            <li>
+                                <fieldset>
+                                    <legend>Use your proposed model to predict the following points (show your
+                                        calculation
+                                        based on your
+                                        model) [4 marks]
+                                        <span class="math display">
+                                            \[ datapoint 1 = (2,2,3), datapoint2 = (4,8,3) \]
+                                        </span>
+                                    </legend>
+                                    <div class="answerSpace">
+                                        <p>Using the model proposed above:</p><span class="math display">
+                                            \[ datapoint 1 = (2,2,3)\]
+                                        </span>
+                                        <pre>
+                                        x = 2.
+                                        As x <=2 then class is 0
+                                        Therefore:
+                                            f(2,2,3) = 0
+                                    </pre>
+                                        <hr>
+                                        <span class="math display">
+                                            \[ datapoint2 = (4,8,3)\]
+                                        </span>
+                                        <pre>
+                                        x = 4.
+                                        As x >2 then class is 1
+                                        Therefore:
+                                            f(4,8,3) = 1
+                                    </pre>
+                                    </div>
+                                </fieldset>
+                            </li>
+                        </ul>
+                    </fieldset>
+                </li>
+                <li>
+                    <fieldset>
+                        Given information of the means and the standard deviations of a binary dataset with four
+                        features.
+                        <span class="math display">
+                            $$class = 0, \mu_1 = 4.89, \mu_2 = 3.33, \mu_3 = 1.43, \mu_4 = 0.23 $$
+                            $$class = 0, \sigma_1 = 0.35, \sigma_2 = 0.38, \sigma_3 = 0.17, \sigma_4 = 0.10 $$
+                            $$class = 1, \mu_1 = 5.93, \mu_2 = 2.77, \mu_3 = 4.26, \mu_4 = 1.35 $$
+                            $$class = 1, \sigma_1 = 0.51, \sigma_2 = 0.31, \sigma_3 = 0.46, \sigma_4 = 0.19 $$
+                        </span>
+                        <ul>
+                            <li>
+                                <fieldset>
+                                    <legend>Propose two classification techniques that can be applied to this problem.
+                                        [6
+                                        marks]</legend>
+                                    <div class="answerSpace">
+                                        <p>We have been provided with means and standard deviations. This means that we
+                                            are
+                                            able to construct a normal distribution
+                                            curve as shown below:</p>
+                                        <img src="https://miro.medium.com/max/1200/1*IdGgdrY_n_9_YfkaCh-dag.png"
+                                            style="width:80vw" />
+
+                                        <p>Armed with this information, we can employ the following techniques:</p>
+                                        <ul>
+                                            <li>Standard Deviation Classification</li>
+                                            <p>
+                                                <a
+                                                    href="https://support.esri.com/en/other-resources/gis-dictionary/term/3ead36b0-644f-4ba5-866c-215cc83cacc8">
+                                                    A
+                                                    data classification method that finds the mean value, then places
+                                                    class
+                                                    breaks above and below the mean at intervals
+                                                    of either .25, .5, or 1 standard deviation until all the data values
+                                                    are
+                                                    contained within the classes. Values that are
+                                                    beyond three standard deviations from the mean are aggregated into
+                                                    two
+                                                    classes, greater than three standard deviations
+                                                    above the mean and less than three standard deviations below the
+                                                    mean.
+                                                </a>
+                                            </p>
+                                            <li>Gaussian Naive Bayes Model</li>
+                                            <p>
+                                                This has the formula:
+                                            </p>
+                                            <div style="width: 100%; display: flex; justify-content: center; ">
+                                                <img src="https://www.saedsayad.com/images/Bayes_rule.png" />
+                                            </div>
+                                            <div style="width: 100%; display: flex; justify-content: center; ">
+                                                <img src="https://www.saedsayad.com/images/Bayes_NormDist.png" />
+                                            </div>
+                                            <pre>
+                                            Where:
+                                                f(x) = Gaussian Probability Density Function
+                                                &mu; is mean
+                                                &sigma; is standard deviation
+                                        </pre>
+                                            <p>Because P(c) & P(x) can be seen as constants, we can simply compare
+                                                likelihoods.</p>
+                                        </ul>
+                                    </div>
+                                </fieldset>
+                            </li>
+                            <li>
+                                <fieldset>
+                                    <legend>Classify a new unseen data below using your proposed technique. [6 marks]
+                                    </legend>
+                                    <span class="math display">
+                                        $$sample 1: class = ?, feature_1 = 5.70, feature_2 = 2.60, feature_3 = 3.50,
+                                        feature_4 =
+                                        1.00 $$
+                                        $$sample 2: class = ?, feature_1 = 5.20, feature_2 = 3.40, feature_3 = 1.40,
+                                        feature_4 =
+                                        0.20 $$
+                                    </span>
+
+                                    <div class="answerSpace">
+                                        <fieldset>
+                                            <legend>
+                                                Sample 1:
+                                            </legend>
+                                            <ol>
+                                                <li>Standard Deviation Classification</li>
+                                                <pre>
+                                                    feature<sub>1</sub> = 5.70
+                                                    feature<sub>2</sub> = 2.60
+                                                    feature<sub>3</sub> = 3.50
+                                                    Feature<sub>4</sub> = 1.00
+                                                </pre>
+                                                <p>For class 0:</p>
+                                                <table>
+                                                    <tr>
+                                                        <td>Feature</td>
+                                                        <td>Mean</td>
+                                                        <td>Standard Deviation</td>
+                                                        <td>Range 1 (100-75%)</td>
+                                                        <td>Range 2 (74-50%)</td>
+                                                        <td>Range 3 (49-25%)</td>
+                                                        <td>Range 4 (24-0%)</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Feature<sub>1</sub></td>
+                                                        <td>4.89</td>
+                                                        <td>0.35</td>
+                                                        <td>4.8025 - 4.9775</td>
+                                                        <td>4.715 - 4.8025 & 4.9775 - 5.065</td>
+                                                        <td>4.6275 - 4.715 & 5.065 - 5.1525</td>
+                                                        <td>4.54 - 4.6275 & 5.1525 - 5.24</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Feature<sub>2</sub></td>
+                                                        <td>3.33</td>
+                                                        <td>0.38</td>
+                                                        <td>3.235 - 3.425</td>
+                                                        <td>3.14 - 3.425 & 3.425 - 3.52</td>
+                                                        <td>3.045 - 3.14 & 3.52 - 3.615</td>
+                                                        <td>2.95 - 3.045 & 3.615 - 3.71</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Feature<sub>3</sub></td>
+                                                        <td>1.43</td>
+                                                        <td>0.17</td>
+                                                        <td>1.3875 - 1.4725</td>
+                                                        <td>1.345 - 1.3875 & 1.4725 - 1.515</td>
+                                                        <td>1.3025 - 1.345 & 1.515 - 1.5575</td>
+                                                        <td>1.26 - 1.3025 & 1.5575 - 1.6</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Feature<sub>4</sub></td>
+                                                        <td>0.23</td>
+                                                        <td>0.1</td>
+                                                        <td>0.205 - 0.255</td>
+                                                        <td>0.18 - 0.205 & 0.255 - 0.28</td>
+                                                        <td>0.155 - 0.18 & 0.28 - 0.305</td>
+                                                        <td>0.13 - 0.155 & 0.305 - 0.33</td>
+                                                    </tr>
+                                                </table>
+                                                <pre>
+                                                    Estimating the likelihoods:
+                                                        Feature<sub>1</sub>: P(5.7|c<sub>0</sub>) = 0
+                                                        Feature<sub>2</sub>: P(2.6|c<sub>0</sub>) = 0
+                                                        Feature<sub>3</sub>: P(3.5|c<sub>0</sub>) = 0
+                                                        Feature<sub>4</sub>: P(1|c<sub>0</sub>) = 0
+                                                        P(c<sub>0</sub>|features) = 0
+                                                </pre>
+                                                <p>
+                                                    For Class 1:
+                                                </p>
+                                                <table>
+                                                    <tr>
+                                                        <td>Feature</td>
+                                                        <td>Mean</td>
+                                                        <td>Standard Deviation</td>
+                                                        <td>Range 1 (100-75%)</td>
+                                                        <td>Range 2 (74-50%)</td>
+                                                        <td>Range 3 (49-25%)</td>
+                                                        <td>Range 4 (24-0%)</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Feature<sub>1</sub></td>
+                                                        <td>5.93</td>
+                                                        <td>0.51</td>
+                                                        <td>5.8025 - 6.0575</td>
+                                                        <td>5.675 - 5.8025 & 6.0575 - 6.185</td>
+                                                        <td>5.5475 - 5.675 & 6.185 - 6.3125</td>
+                                                        <td>5.42 - 5.5475 & 6.3125 - 6.44</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Feature<sub>2</sub></td>
+                                                        <td>2.77</td>
+                                                        <td>0.31</td>
+                                                        <td>2.6925 - 2.8475</td>
+                                                        <td>2.615 - 2.6925 & 2.8475 - 2.925</td>
+                                                        <td>2.5375 - 2.615 & 2.925 - 3.0025</td>
+                                                        <td>2.46 - 2.5375 & 3.0025 - 3.08</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Feature<sub>3</sub></td>
+                                                        <td>4.26</td>
+                                                        <td>0.46</td>
+                                                        <td>4.145 - 4.375</td>
+                                                        <td>4.03 - 4.145 & 4.375 - 4.49</td>
+                                                        <td>3.915 - 4.03 & 4.49 - 4.605</td>
+                                                        <td>3.8 - 3.915 & 4.605 - 4.72</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Feature<sub>4</sub></td>
+                                                        <td>1.35</td>
+                                                        <td>0.19</td>
+                                                        <td>1.3025 - 1.3975</td>
+                                                        <td>1.255 - 1.3025 & 1.3975 - 1.445</td>
+                                                        <td>1.2075 - 1.255 & 1.445 - 1.4925</td>
+                                                        <td>1.16 - 1.2075 & 1.4925 - 1.54</td>
+                                                    </tr>
+                                                </table>
+                                                <pre>
+                                                    Estimating the likelihoods:
+                                                        Feature<sub>1</sub>: P(5.7|c<sub>1</sub>) = 0.75
+                                                        Feature<sub>2</sub>: P(2.6|c<sub>1</sub>) = 0.5
+                                                        Feature<sub>3</sub>: P(3.5|c<sub>1</sub>) = 0 <--- we will replace with a small value.
+                                                        Feature<sub>4</sub>: P(1|c<sub>1</sub>) = 0 <--- we will replace with a small value.
+                                                        P(c<sub>1</sub>|features) > 0
+                                                </pre>
+
+                                                <p>Therefore according to this very rough approximation, Sample 1
+                                                    belongs to <strong>Class 1</strong></p>
+                                                <li>Gaussian Naive Bayes Model</li>
+                                                <table>
+                                                    <tr>
+                                                        <td>P(feature<sub>1</sub>|c<sub>0</sub>)</td>
+                                                        <td>P(feature<sub>2</sub>|c<sub>0</sub>)</td>
+                                                        <td>P(feature<sub>3</sub>|c<sub>0</sub>)</td>
+                                                        <td>P(feature<sub>4</sub>|c<sub>0</sub>)</td>
+                                                        <td>P(c<sub>0</sub>|features)</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>0.046329024</td>
+                                                        <td>0.10224656</td>
+                                                        <td>6.16649E-33</td>
+                                                        <td>1.68364E-13</td>
+                                                        <td>4.91802E-48</td>
+                                                    </tr>
+                                                </table>
+                                                <br>
+                                                <hr>
+                                                <br>
+                                                <table>
+                                                    <tr>
+                                                        <td>P(feature<sub>1</sub>|c<sub>1</sub>)</td>
+                                                        <td>P(feature<sub>2</sub>|c<sub>1</sub>)</td>
+                                                        <td>P(feature<sub>3</sub>|c<sub>1</sub>)</td>
+                                                        <td>P(feature<sub>4</sub>|c<sub>1</sub>)</td>
+                                                        <td>P(c<sub>1</sub>|features)</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>0.504615809</td>
+                                                        <td>0.61649119</td>
+                                                        <td>0.150241173</td>
+                                                        <td>0.167755313</td>
+                                                        <td>0.007840666</td>
+                                                    </tr>
+                                                </table>
+                                                <p>
+                                                    Since P(c<sub>1</sub>|features) > P(c<sub>0</sub>|features)
+                                                    <strong>Sample 1 belongs to class 1</strong>
+                                                </p>
+                                            </ol>
+                                        </fieldset>
+                                        <fieldset>
+                                            <legend>
+                                                Sample 2:
+                                            </legend>
+                                            <ol>
+                                                <li>Standard Deviation Classification</li>
+                                                <pre>
+                                                    feature<sub>1</sub> = 5.20
+                                                    feature<sub>2</sub> = 3.40
+                                                    feature<sub>3</sub> = 1.40
+                                                    Feature<sub>4</sub> = 0.20
+                                                </pre>
+                                                <p>For class 0:</p>
+                                                <table>
+                                                    <tr>
+                                                        <td>Feature</td>
+                                                        <td>Mean</td>
+                                                        <td>Standard Deviation</td>
+                                                        <td>Range 1 (100-75%)</td>
+                                                        <td>Range 2 (74-50%)</td>
+                                                        <td>Range 3 (49-25%)</td>
+                                                        <td>Range 4 (24-0%)</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Feature<sub>1</sub></td>
+                                                        <td>4.89</td>
+                                                        <td>0.35</td>
+                                                        <td>4.8025 - 4.9775</td>
+                                                        <td>4.715 - 4.8025 & 4.9775 - 5.065</td>
+                                                        <td>4.6275 - 4.715 & 5.065 - 5.1525</td>
+                                                        <td>4.54 - 4.6275 & 5.1525 - 5.24</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Feature<sub>2</sub></td>
+                                                        <td>3.33</td>
+                                                        <td>0.38</td>
+                                                        <td>3.235 - 3.425</td>
+                                                        <td>3.14 - 3.425 & 3.425 - 3.52</td>
+                                                        <td>3.045 - 3.14 & 3.52 - 3.615</td>
+                                                        <td>2.95 - 3.045 & 3.615 - 3.71</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Feature<sub>3</sub></td>
+                                                        <td>1.43</td>
+                                                        <td>0.17</td>
+                                                        <td>1.3875 - 1.4725</td>
+                                                        <td>1.345 - 1.3875 & 1.4725 - 1.515</td>
+                                                        <td>1.3025 - 1.345 & 1.515 - 1.5575</td>
+                                                        <td>1.26 - 1.3025 & 1.5575 - 1.6</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Feature<sub>4</sub></td>
+                                                        <td>0.23</td>
+                                                        <td>0.1</td>
+                                                        <td>0.205 - 0.255</td>
+                                                        <td>0.18 - 0.205 & 0.255 - 0.28</td>
+                                                        <td>0.155 - 0.18 & 0.28 - 0.305</td>
+                                                        <td>0.13 - 0.155 & 0.305 - 0.33</td>
+                                                    </tr>
+                                                </table>
+                                                <pre>
+                                                    Estimating the likelihoods:
+                                                        Feature<sub>1</sub>: P(5.20|c<sub>0</sub>) = 0 <-- Will be replaced with a small value
+                                                        Feature<sub>2</sub>: P(3.40|c<sub>0</sub>) = 0.75
+                                                        Feature<sub>3</sub>: P(1.40|c<sub>0</sub>) = 1
+                                                        Feature<sub>4</sub>: P(0.20|c<sub>0</sub>) = 0.25
+                                                        P(c<sub>0</sub>|features) > 0
+                                                </pre>
+                                                <p>
+                                                    For Class 1:
+                                                </p>
+                                                <table>
+                                                    <tr>
+                                                        <td>Feature</td>
+                                                        <td>Mean</td>
+                                                        <td>Standard Deviation</td>
+                                                        <td>Range 1 (100-75%)</td>
+                                                        <td>Range 2 (74-50%)</td>
+                                                        <td>Range 3 (49-25%)</td>
+                                                        <td>Range 4 (24-0%)</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Feature<sub>1</sub></td>
+                                                        <td>5.93</td>
+                                                        <td>0.51</td>
+                                                        <td>5.8025 - 6.0575</td>
+                                                        <td>5.675 - 5.8025 & 6.0575 - 6.185</td>
+                                                        <td>5.5475 - 5.675 & 6.185 - 6.3125</td>
+                                                        <td>5.42 - 5.5475 & 6.3125 - 6.44</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Feature<sub>2</sub></td>
+                                                        <td>2.77</td>
+                                                        <td>0.31</td>
+                                                        <td>2.6925 - 2.8475</td>
+                                                        <td>2.615 - 2.6925 & 2.8475 - 2.925</td>
+                                                        <td>2.5375 - 2.615 & 2.925 - 3.0025</td>
+                                                        <td>2.46 - 2.5375 & 3.0025 - 3.08</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Feature<sub>3</sub></td>
+                                                        <td>4.26</td>
+                                                        <td>0.46</td>
+                                                        <td>4.145 - 4.375</td>
+                                                        <td>4.03 - 4.145 & 4.375 - 4.49</td>
+                                                        <td>3.915 - 4.03 & 4.49 - 4.605</td>
+                                                        <td>3.8 - 3.915 & 4.605 - 4.72</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Feature<sub>4</sub></td>
+                                                        <td>1.35</td>
+                                                        <td>0.19</td>
+                                                        <td>1.3025 - 1.3975</td>
+                                                        <td>1.255 - 1.3025 & 1.3975 - 1.445</td>
+                                                        <td>1.2075 - 1.255 & 1.445 - 1.4925</td>
+                                                        <td>1.16 - 1.2075 & 1.4925 - 1.54</td>
+                                                    </tr>
+                                                </table>
+                                                <pre>
+                                                    Estimating the likelihoods:
+                                                        Feature<sub>1</sub>: P(5.20|c<sub>1</sub>) = 0
+                                                        Feature<sub>2</sub>: P(3.40|c<sub>1</sub>) = 0
+                                                        Feature<sub>3</sub>: P(1.40|c<sub>1</sub>) = 0
+                                                        Feature<sub>4</sub>: P(0.20|c<sub>1</sub>) = 0
+                                                        P(c<sub>1</sub>|features) = 0
+                                                </pre>
+
+                                                <p>Therefore according to this very rough approximation, Sample 2
+                                                    belongs to <strong>Class 0</strong></p>
+                                                <li>Gaussian Naive Bayes Model</li>
+                                                <table>
+                                                    <tr>
+                                                        <td>P(feature<sub>1</sub>|c<sub>0</sub>)</td>
+                                                        <td>P(feature<sub>2</sub>|c<sub>0</sub>)</td>
+                                                        <td>P(feature<sub>3</sub>|c<sub>0</sub>)</td>
+                                                        <td>P(feature<sub>4</sub>|c<sub>0</sub>)</td>
+                                                        <td>P(c<sub>0</sub>|features)</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>0.455539718</td>
+                                                        <td>0.636282088</td>
+                                                        <td>0.952627763</td>
+                                                        <td>1.206054169</td>
+                                                        <td>0.333016686</td>
+                                                    </tr>
+                                                </table>
+                                                <br>
+                                                <hr>
+                                                <br>
+                                                <table>
+                                                    <tr>
+                                                        <td>P(feature<sub>1</sub>|c<sub>1</sub>)</td>
+                                                        <td>P(feature<sub>2</sub>|c<sub>1</sub>)</td>
+                                                        <td>P(feature<sub>3</sub>|c<sub>1</sub>)</td>
+                                                        <td>P(feature<sub>4</sub>|c<sub>1</sub>)</td>
+                                                        <td>P(c<sub>1</sub>|features)</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>0.200552355</td>
+                                                        <td>0.090864721</td>
+                                                        <td>2.37409E-09</td>
+                                                        <td>1.01505E-08</td>
+                                                        <td>4.39143E-19</td>
+                                                    </tr>
+                                                </table>
+                                                <p>
+                                                    Since P(c<sub>0</sub>|features) > P(c<sub>1</sub>|features)
+                                                    <strong>Sample 2 belongs to class 0</strong>
+                                                </p>
+                                            </ol>
+                                        </fieldset>
+                                        <strong><i>Note: Might have typed in wrong numbers somewhere. My
+                                                apologies.</i></strong>
+                                    </div>
+                                </fieldset>
+                            </li>
+                        </ul>
+                    </fieldset>
+                </li>
+            </ol>
+        </div>
+    </body>
+
+</html>
