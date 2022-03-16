@@ -3,8 +3,6 @@
 
     <head>
         <meta charset="UTF-8">
-        <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@3.13.0/dist/tf.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs-vis"></script>
         <title>Faiz DAVIS Test 1 Answers</title>
         <meta charset="UTF-8">
         <meta name="description" content="DAVIS 2022 Test 1 Part B">
@@ -60,6 +58,8 @@
             }
         </style>
     </head>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@3.13.0/dist/tf.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs-vis"></script>
 
     <body>
         <h3>Part B: Iris Classifier (50 marks)</h3>
@@ -76,20 +76,294 @@
                     </div>
                 </fieldset>
             </li>
-            <li>Construct a neural network (I suggest 4:8:3 architecture (input nodes : hidden nodes: output nodes), but
-                you can use your own designs).</li>
-            <li>Discuss the following information of your Iris Classifier (5,10,10,5,10)
-                <ul>
-                    <li>Discuss the network design</li>
-                    <li>Discuss the selection of network parameters for training e.g., optrimizer, loss, etc. </li>
-                    <li>Train the network (using only training data)</li>
-                    <li>Graph the accuracy and loss of the training process (using either chartjs, plotlyjs or tfjs-vis)
-                    </li>
-                    <li>Report the accuracy and confusion matrix of the test result (of test data)</li>
-                </ul>
+            <li>
+                <fieldset>
+                    <legend>Construct a neural network (I suggest 4:8:3 architecture (input nodes : hidden nodes: output
+                        nodes), but
+                        you can use your own designs).</legend>
+                    <div id="task2" class="answerSpace">
+                        Nothing yet.
+                    </div>
+                </fieldset>
+            </li>
+            <li>
+                <fieldset>
+                    Discuss the following information of your Iris Classifier (5,10,10,5,10)
+                    <ul>
+                        <li>
+                            <fieldset>
+                                <legend>Discuss the network design</legend>
+                                <div class="answerSpace">
+                                    <p>The network is 4:8:3. <strike>I used this because you suggested it</strike>. For
+                                        this type of classification, where the decision boundaries are more or less
+                                        clearly defined, one hidden layer is enough. The input layer has 4 units because
+                                        the input has four values:</p>
+                                    <ul>
+                                        <li>Sepal Length</li>
+                                        <li>Sepal Width</li>
+                                        <li>Petal Length</li>
+                                        <li>Petal Width</li>
+                                    </ul>
+                                    <p>The hidden layer has 8 units because it is good practice. More units would lead
+                                        to a more accurate model, but for something as simple as this, more than one
+                                        hidden layer is overkill.The number of units can be increased, but for an
+                                        exploratory run, 8 is enough. This is so the model can be trained faster.</p>
+                                    <p>
+                                        Output layer has 3 units because there are 3 types of outputs:
+                                    </p>
+                                    <ul>
+                                        <li>Iris Setosa</li>
+                                        <li>Iris Versicolour</li>
+                                        <li>Iris Virginica</li>
+                                    </ul>
+
+                                </div>
+                            </fieldset>
+                        </li>
+                        <li>
+                            <fieldset>
+                                <legend>Discuss the selection of network parameters for training e.g., optimizer, loss,
+                                    etc.</legend>
+                                <div class="answerSpace">
+                                    <p>
+                                        The optimizer used is <a
+                                            href="https://js.tensorflow.org/api/3.13.0/#train.rmsprop">rmsprop</a>
+                                        because it seems to yield <a
+                                            href="https://medium.com/@nutanbhogendrasharma/tensorflow-deep-learning-model-with-iris-dataset-8ec344c49f91">good
+                                            results</a> for this dataset.
+                                    </p>
+                                    <p>The loss is set to 'sparseCategoricalCrossentropy' so that the output does not
+                                        need to be one hot encoded.</p>
+
+                                    <p>The metrics measured is accuracy because this is the most suitable way of
+                                        measuring the performance of the model.</p>
+                                </div>
+                            </fieldset>
+                        </li>
+                        <li>
+                            <fieldset>
+                                <legend>Train the network (using only training data)</legend>
+                                <div id="task3" class="answerSpace">
+                                    Doing nothing...
+                                </div>
+                            </fieldset>
+                        </li>
+                        <li>
+                            <fieldset>
+                                <legend>Graph the accuracy and loss of the training process (using either chartjs,
+                                    plotlyjs or
+                                    tfjs-vis)</legend>
+
+                                <div id="task4" class="answerSpace">Doing nothing...</div>
+                            </fieldset>
+                        </li>
+                        <li>
+                            <fieldset>
+                                <legend>Report the accuracy and confusion matrix of the test result (of test data)
+                                </legend>
+                                <div id="task5" class="answerSpace">Waiting for model to be trained <img
+                                        src="https://c.tenor.com/I6kN-6X7nhAAAAAj/loading-buffering.gif"
+                                        style="height:1.6rem" /></div>
+                                <div id="task6" class="answerSpace"></div>
+                            </fieldset>
+                        </li>
+                    </ul>
+                </fieldset>
             </li>
         </ul>
-
+        <p>Public repository: <a href="">My Github</a></p>
+        <p>Iris dataset also stored there.</p>
+        <p>Development Stack</p>
+        <ul>
+            <li>HTML</li>
+            <li>Vanilla JS</li>
+            <li>TensorFlow JS</li>
+        </ul>
+        <p>Thank you for allowing the delays sir!</p>
     </body>
+    <script lang="js">
+        //dom objects
+        const answerSpace1 = document.getElementById('task1')
+        const answerSpace2 = document.getElementById('task2')
+        const answerSpace3 = document.getElementById('task3')
+        const answerSpace4 = document.getElementById('task4')
+        const answerSpace5 = document.getElementById('task5')
+        const answerSpace6 = document.getElementById('task6')
+
+        //dataset url
+        const csvUrl = 'https://raw.githubusercontent.com/Izunyaaan/davis_test1/main/iris.csv'
+
+        //model variables
+        const batchSize = 5
+        const numOfEpoch = 10
+        const numOfFeatures = 4
+        const numOfClasses = 3
+        const classNames = ["Iris-setosa", "Iris-versicolor", "Iris-virginica"]
+
+        const loadData = function (dataUrl) {
+
+            //encode label. Setosa = 0, versicolour = 1, virginica = 2
+            const transform = ({ xs, ys }) => {
+                switch (ys.Species) {
+                    case 'Iris-setosa':
+                        ys.Species = 0;
+                        break;
+                    case 'Iris-versicolor':
+                        ys.Species = 1;
+                        break;
+
+                    default:
+                        ys.Species = 2;
+                        break;
+                }
+                return {
+                    xs: Object.values(xs),
+                    ys: Object.values(ys)
+                }
+            }
+
+            return tf.data.csv(csvUrl, {
+                columnConfigs: {
+                    SepalLengthCm: {
+                        required: true
+                    },
+                    SepalWidthCm: {
+                        required: true
+                    },
+                    PetalLengthCm: {
+                        required: true
+                    },
+                    PetalWidthCm: {
+                        required: true
+                    },
+                    Species: {
+                        isLabel: true,
+                    },
+                },
+                configuredColumnsOnly: true
+            }).map(transform).shuffle(150, '1337')
+        }
+
+        //Construct a 4:8:3 neural network
+        const buildModel = function () {
+            //use sequential model
+            answerSpace2.innerText = "Initializing model"
+            const model = tf.sequential()
+
+            //create dense hidden layer
+            model.add(tf.layers.dense({
+                inputShape: [numOfFeatures],
+                units: numOfFeatures * 2
+            }))
+
+            //create dense output layer
+            model.add(tf.layers.dense({
+                units: numOfClasses,
+                activation: 'softmax'
+            }))
+
+            //summarize and compile the model
+            model.summary()
+            model.compile({ optimizer: 'rmsprop', loss: 'sparseCategoricalCrossentropy', metrics: ['acc'] })
+
+            return model
+        }
+
+        //train a model using a dataset
+        answerSpace3.innerHTML = `Training model <img src="https://c.tenor.com/I6kN-6X7nhAAAAAj/loading-buffering.gif" style="height:1.6rem"/>`
+        answerSpace4.innerHTML = `Training model <img src="https://c.tenor.com/I6kN-6X7nhAAAAAj/loading-buffering.gif" style="height:1.6rem"/>`
+        const trainModel = async function (model, trainingData, epochs = numOfEpoch) {
+            const options = {
+                epochs: epochs,
+                batchSize: batchSize,
+                callbacks: {
+                    onEpochEnd: async (epoch, logs) => {
+                        console.log(`===Epoch #${epoch}===`);
+                        console.log(`===Train Dataset Loss: ${logs.loss}===`);
+                        console.log(`===Train Dataset Accuracy: ${logs.acc}===`);
+                    }
+                }
+            }
+
+            return await model.fitDataset(trainingData, options)
+        }
+
+        //evaluate model using test dataset
+        const evaluateModel = async function (model, testData) {
+            const result = await model.evaluateDataset(testData)
+            const testLoss = result[0].dataSync()[0]
+            const testAcc = result[1].dataSync()[0]
+
+            console.log(`===Test Dataset Loss: ${testLoss}===`);
+            console.log(`===Test Dataset Accuracy: ${testAcc}===`);
+
+            answerSpace5.innerHTML = `Test Dataset Loss: ${testLoss}<br>`
+            answerSpace5.innerHTML += `Test Dataset Loss: ${testAcc}<br>`
+        }
+
+        const constructConfusionMatrix = (model) => {
+            //construct array for label and predicted data
+            answerSpace6.innerHTML = `Constructing confusion matrix <img src="https://c.tenor.com/I6kN-6X7nhAAAAAj/loading-buffering.gif" style="height:1.6rem"/>`
+            const testData = loadData(csvUrl).skip(105).toArray();
+            const labels = [];
+            const predicted = [];
+            testData.then(
+                (e) => {
+                    e.forEach(element => {
+                        const prediction = model.predict(tf.tensor2d(element.xs, [1, 4]))
+                        const predictionArr = [prediction.dataSync()[0], prediction.dataSync()[1], prediction.dataSync()[2]]
+                        const max = Math.max(...predictionArr)
+                        const index = predictionArr.indexOf(max)
+                        predicted.push(index)
+                        labels.push(element.ys[0])
+                    })
+
+                    const output = tf.math.confusionMatrix(labels, predicted, numOfClasses)
+                    output.print()
+                    answerSpace6.innerHTML = "<hr>Confusion Matrix:<br>"
+                    answerSpace6.innerText += output
+                }
+            );
+        }
+
+        const run = async function () {
+            //load, divide and batch dataset
+            answerSpace1.innerText = "Loaded the CSV... Maybe?"
+            const trainData = loadData(csvUrl).take(105).batch(batchSize)
+            answerSpace1.innerText = "Training Dataset prepared."
+            const testData = loadData(csvUrl).skip(105).batch(batchSize)
+            answerSpace1.innerText = "Training Dataset and Test Dataset prepared. Training Size 105. Test Size 45. Random seed '1337'"
+
+            //build the model
+            const model = buildModel()
+            answerSpace2.innerHTML = `Neural network constructed. Model summary :
+            <pre>
+ _________________________________________________________________
+ Layer (type)                 Output shape              Param #   
+ =================================================================
+ dense_Dense1 (Dense)         [null,8]                  40        
+ _________________________________________________________________
+ dense_Dense2 (Dense)         [null,4]                  27        
+ =================================================================
+ Total params: 67
+ Trainable params: 67
+ Non-trainable params: 0
+ _________________________________________________________________
+            </pre>`
+
+            //train model and save history
+            const history = await trainModel(model, trainData)
+            answerSpace3.innerText = "Training complete."
+            answerSpace4.innerHTML = ''
+            tfvis.show.history(answerSpace4, history, ['loss', 'acc'])
+
+            //evaluate the model
+            answerSpace5.innerHTML = `Evaluating model <img src="https://c.tenor.com/I6kN-6X7nhAAAAAj/loading-buffering.gif" style="height:1.6rem"/>`
+            await evaluateModel(model, testData)
+
+            constructConfusionMatrix(model)
+        }
+        run()
+    </script>
 
 </html>
